@@ -1,7 +1,7 @@
 
 
-var w =  screen.width + 4000
-var h = screen.height + 400
+var w = window.innerWidth * 8
+var h = window.innerHeight + 400
 
 
 var margin = {
@@ -48,7 +48,7 @@ function artist(){
       for(i= 0; i <nest.length; i++){
       svg.append("text")
         .attr("x",i*750 )
-        .attr("y", -30)
+        .attr("y", 0)
         .text(nest[i].key)
         .style("font-weight", "bold")
         .style("font-size", 20)
@@ -64,7 +64,7 @@ function artist(){
         .attr("transform", function(d,i){
           for(j= 0; j<nest.length; j++){
             if(d.key == nest[j].key){
-              return "translate(" + j*750 +"," + ((-10)) + ")"
+              return "translate(" + j*750 +"," + ((10)) + ")"
             } 
           }
         }).attr("id", "artiststag")
